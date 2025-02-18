@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title> CONFIRM BOOKING</title>
+  
+</head>
+
+<body class="bg-light">
+
+  
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 my-5 mb-4 px-4">
+        <h2 class="fw-bold">XÁC NHẬN ĐẶT PHÒNG</h2>
+        <div style="font-size: 14px;">
+          <a  class="text-secondary text-decoration-none">TRANG CHỦ</a>
+          <span class="text-secondary"> > </span>
+          <a  class="text-secondary text-decoration-none">PHÒNG</a>
+          <span class="text-secondary"> > </span>
+          <a  class="text-secondary text-decoration-none">XÁC NHẬN</a>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-12 px-4">
+        
+      </div>
+
+      <div class="col-lg-5 col-md-12 px-4">
+        <div class="card mb-4 border-0 shadow-sm rounded-3">
+          <div class="card-body">
+            <form action="pay_now.php" method="POST" id="booking_form">
+              <h6 class="mb-3">CHI TIẾT PHÒNG ĐẶT</h6>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Tên</label>
+                  <input name="name" type="text" value="name" class="form-control shadow-none" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Số Điện Thoại</label>
+                  <input name="phonenum" type="number" value="number" class="form-control shadow-none" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Địa Chỉ</label>
+                  <textarea name="address" class="form-control shadow-none" rows="1" required></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Ngày Nhận Phòng</label>
+                  <input name="checkin" onchange="check_availability()" type="date" class="form-control shadow-none" required>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label class="form-label">Ngày Trả Phòng</label>
+                  <input name="checkout" onchange="check_availability()" type="date" class="form-control shadow-none" required>
+                </div>
+
+                <div class="col-12">
+                  <div class="spinner-border text-info mb-3 d-none" id="info_loader" role="status">
+                    <span class="visually-hidden">Đang Tải ...</span>
+                  </div>
+
+                  <h6 class="mb-3 text-danger" id="pay_info">Cung cấp ngày nhận phòng và trả phòng!</h6>
+                  <h6 class="mb-3 text-danger" id="pay_info"></h6>
+
+                  <button id="book-now" name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled>Đặt Ngay</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+ 
+ 
+
+  
+
+</body>
+
+</html>
